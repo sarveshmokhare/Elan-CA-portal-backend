@@ -1,9 +1,27 @@
 <%- include ('partials/header.ejs') %>
-<div class="name"><%=user.username%></div>
-<img class="image" src="<%= user.thumbnail%>" alt="" />
-<div class="ID">CA-<%=user.campambid%></div>
-<div class="college"><%=user.collegename%></div>
-<div class="phone"><%=user.phone%></div>
-<a href="/profile">Edit</a>
-<a href="/profile/leaderboard">leaderboard</a>
-<%- include ('partials/footer.ejs') %>
+  <div class="m-auto" style="height : 80%;">
+    <div class="col-5 mx-auto mt-5 justify-content-center">
+      <div class="px-auto">
+        <img class="rounded-circle  " src="<%= user.thumbnail%>">
+      </div>
+    </div>
+    <div class="col-7 col-lg-10 mx-auto text-center">
+      <div>
+        <p class="text-black mt-2 abtext"> <b>
+            <%=user.username%>
+          </b> </p>
+        <hr>
+        <p style=" margin-top: -5px;" class="text-black abtext">CA- <%=user.campambid%>
+        </p>
+        <p style=" margin-top: -15px;" class="text-black abtext">College name- <%=user.collegename%>
+        </p>
+        <p style="margin-top: -15px;" class="text-black abtext">Phone Number - <%=user.phno%>
+        </p>
+        <p style="margin-top: -15px;" class="text-black abtext">Points - <%=user.points%>
+        </p>
+        <a href="/profile">Edit Details-<i class="fas fa-edit"></i></a>
+      </div>
+    </div>
+  </div>
+  </div>
+  <%- include ('partials/footer.ejs') %>
