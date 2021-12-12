@@ -1,0 +1,40 @@
+<%- include ('partials/header.ejs') %>
+  <form action="/profile">
+    <h2>Your Details</h2>
+    <input type="text" name="Yourname" placeholder="Your name" required value=<%=user.yourname %>>
+    <input type="text" name="CollegeName" placeholder="CollegeName" required value=<%=user.collegename%>>
+    >
+    <input type="text" name="Phone" placeholder="Phone number" required value=<%=user.phno %>>
+    <div class="error"></div>
+    <button>Submit</button>
+  </form>
+  <a href="/logout">logout</a>
+
+  <%- include ('partials/footer.ejs') %>
+
+    <script>
+      const form = document.querySelector("form");
+      const error = document.querySelector(".error");
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const yourname = form.Yourname.value;
+        const collegename = form.CollegeName.value;
+        const phone = form.Phone.value;
+
+        if (phone.length !== 10) {
+          error.innerHTML = "Not valid vro";
+        } else {
+          const result = await fetch("/profile", {
+            method: "POST",
+            body: JSON.stringify({ yourname, collegename, phone }),
+            headers: { "Content-Type": "application/json" },
+          }).then((res) => res.json());
+
+          if (result.status === "success") {
+            window.location.replace("/profile/user");
+          } else {
+            window.location.replace("/profile");
+          }
+        }
+      });
+    </script>

@@ -1,0 +1,9 @@
+<%- include ('partials/header.ejs') %>
+<div class="name"><%=user.username%></div>
+<img class="image" src="<%= user.thumbnail%>" alt="" />
+<div class="ID">CA-<%=user.campambid%></div>
+<div class="college"><%=user.collegename%></div>
+<div class="phone"><%=user.phone%></div>
+<a href="/profile">Edit</a>
+<a href="/profile/leaderboard">leaderboard</a>
+<%- include ('partials/footer.ejs') %>

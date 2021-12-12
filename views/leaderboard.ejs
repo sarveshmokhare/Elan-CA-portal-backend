@@ -1,0 +1,19 @@
+<%- include ('partials/header.ejs') %>
+  <% count =0 %>
+  <% users.forEach(function(user){ %>
+   <% count+=1;%>
+   <div>
+   <span class="number"><%= count %></span>
+   <% if (user.username === king.username){
+      rank = count;%>
+     <span class="kingu"><%= king.username %></span>
+   <% }else{%>
+   <span class="username"><%= user.username %></span>
+   <%}%>
+   <span class="campambid">CA-<%= user.campambid %>
+   <span class="points"><%=user.points %></span></div>
+   <br>
+     <% })%>
+   <div class="yourrank"><h3>Your rank</h3><%= rank %></div>
+
+   <%- include ('partials/footer.ejs') %>
