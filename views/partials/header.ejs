@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CA-portal</title>
+    <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon">
     <!-- <link rel = "stylesheet" href = "../public/assets/form.css"> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -19,6 +20,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <style>
         .styleheading {
             text-align: left;
@@ -47,18 +50,43 @@
 
         .p {
             font-size: 1.1em;
-            font-family: Roboto;
+            font-family: 'Roboto';
             font-weight: 500;
         }
 
         .span {
             font-size: 1.1em;
-            font-family: Roboto;
+            font-family: 'Roboto';
             font-weight: 500;
         }
 
         .mx-3 {
             color: #1ABCBC;
+        }
+
+        * {
+            font-family: Roboto;
+            font-weight: 600;
+        }
+
+        .changedesc {
+            color: white;
+            font-family: Roboto;
+            font-weight: 600;
+            font-size: 18px;
+            letter-spacing: 0.5px;
+        }
+
+        .bi {
+            font-size: 24px;
+            margin: auto;
+        }
+
+        .g-icon {
+            color: #1abc9c;
+        }
+        .g-icon-x {
+            color: red;
         }
     </style>
 </head>
@@ -70,18 +98,18 @@
                 <a to="/" class="d-flex align-items-center my-1 my-lg-0 me-lg-auto text-white text-decoration-none">
                     <img src="assets/logo.png" height="60" width="65" />
                 </a>
-                <% if (user){ %>
-                    <ul class="nav col-12 col-lg-auto my-1 justify-content-center my-md-0 text-small">
-                        <li>
-                            <a href="/" class="nav-link text-white">
-                                <i class="fas fa-house-user"></i>
-                                Home
-                            </a>
-                        </li>
+                <ul class="nav col-12 col-lg-auto my-1 justify-content-center my-md-0 text-small">
+                    <li>
+                        <a href="/" class="nav-link text-white">
+                            <i class="fas fa-house-user bi d-block mx-auto mb-1"></i>
+                            Home
+                        </a>
+                    </li>
+                    <% if (user){ %>
                         <li>
 
                             <a href="/profile/leaderboard" class="nav-link text-white">
-                                <i class="fas fa-trophy"></i>
+                                <i class="fas fa-trophy bi d-block mx-auto mb-1"></i>
                                 Leaderboard
                             </a>
 
@@ -89,33 +117,35 @@
                         <li>
 
                             <a href="/profile/tasks" class="nav-link text-white">
-                                <i class="fas fa-tasks"></i>
+                                <i class="fas fa-tasks bi d-block mx-auto mb-1"></i>
                                 Tasks
                             </a>
                         </li>
                         <li>
 
                             <a href="/profile/user" class="nav-link text-white">
-                                <i class="fas fa-address-card"></i>
+                                <i class="fas fa-address-card bi d-block mx-auto mb-1"></i>
                                 Profile
                             </a>
 
                         </li>
                         <li>
-
-                            <a href="/logout" class="nav-link text-white">
-
-                                Logout
+                            <a class="nav-link text-white" href="/logout" style="text-decoration: none;color: white;font-family: 'Roboto';">
+                                <button class="btn btn-warning text-white me-2"><i
+                                        class="fas fa-sign-out-alt me-2 g-icon-x"></i>Logout</button>
                             </a>
 
                         </li>
-                    </ul>
 
+                        <%}%>
+                </ul>
+                <% if (!user){ %>
+                    <span class="changedesc">Hello Guest</span>
+                    <span class="me-4"></span>
+                    <button class="btn btn-warning text-white me-2"><a href="/google"
+                            style="text-decoration: none;color: white;font-family: 'Roboto';"><i
+                                class="fab fa-google me-2 g-icon"></i>Login with Google</a></button>
                     <%}%>
-                        <% if (!user){ %>
-                            <span class="changedesc">Hello Guest</span>
-                            <button><a href="/google">google</a></button>
-                            <%}%>
             </div>
         </div>
     </div>
