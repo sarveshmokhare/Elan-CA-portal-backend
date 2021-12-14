@@ -1,40 +1,62 @@
 <%- include ('partials/header.ejs') %>
-  <form action="/profile">
-    <h2>Your Details</h2>
-    <input type="text" name="Yourname" placeholder="Your name" required value=<%=user.yourname %>>
-    <input type="text" name="CollegeName" placeholder="CollegeName" required value=<%=user.collegename%>
-    >
-    <input type="text" name="Phone" placeholder="Phone number" required value=<%=user.phno %>>
-    <div class="error"></div>
-    <button>Submit</button>
-  </form>
-  <a href="/logout">logout</a>
+  <div class="container">
+    <form action="/profile">
+      <div class="d-flex" style="min-height: 400px;">
+        <div class="mx-auto my-auto">
+          <h2 class="text-center mt-4" style="font-size: 2em;font-family: Lora;font-weight: 900;">Your Details</h2>
+          <hr>
+          <div class="name py-1">
+            <span style="width:200px;">Your Name:</span> <input type="text" class="mx-2" name="Yourname" placeholder="Your name" required
+              value=<%=user.yourname %>>
+          </div>
+          <div class="college py-1">
+            <span style="width:200px;">College Name:</span> <input type="text" name="CollegeName" class="mx-2" placeholder="CollegeName" required
+              value=<%=user.collegename%>
+            >
+          </div>
+          <div class="phone py-1">
+            <span style="width:200px;">Phone number:</span><input type="text" class="mx-2" name="Phone" placeholder="Phone number" required
+              value=<%=user.phno %>>
+          </div>
+          <div class="error"></div>
+          <div class="d-flex">
+            <button class="btn btn-warning mx-auto mt-4" style="color: white;font-weight: 900;">Submit</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <!-- <a href="/logout">logout</a> -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+    crossorigin="anonymous"></script>
+  </body>
 
-  <%- include ('partials/footer.ejs') %>
+  </html>
 
-    <script>
-      const form = document.querySelector("form");
-      const error = document.querySelector(".error");
-      form.addEventListener("submit", async (e) => {
-        e.preventDefault();
-        const yourname = form.Yourname.value;
-        const collegename = form.CollegeName.value;
-        const phone = form.Phone.value;
+  <script>
+    const form = document.querySelector("form");
+    const error = document.querySelector(".error");
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const yourname = form.Yourname.value;
+      const collegename = form.CollegeName.value;
+      const phone = form.Phone.value;
 
-        if (phone.length !== 10) {
-          error.innerHTML = "Not valid vro";
+      if (phone.length !== 10) {
+        error.innerHTML = "Not valid vro";
+      } else {
+        const result = await fetch("/profile", {
+          method: "POST",
+          body: JSON.stringify({ yourname, collegename, phone }),
+          headers: { "Content-Type": "application/json" },
+        }).then((res) => res.json());
+
+        if (result.status === "success") {
+          window.location.replace("/profile/user");
         } else {
-          const result = await fetch("/profile", {
-            method: "POST",
-            body: JSON.stringify({ yourname, collegename, phone }),
-            headers: { "Content-Type": "application/json" },
-          }).then((res) => res.json());
-
-          if (result.status === "success") {
-            window.location.replace("/profile/user");
-          } else {
-            window.location.replace("/profile");
-          }
+          window.location.replace("/profile");
         }
-      });
-    </script>
+      }
+    });
+  </script>

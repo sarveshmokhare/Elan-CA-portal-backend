@@ -1,25 +1,25 @@
 <%- include ('partials/header.ejs') %>
-  <div class="m-auto" style="height : 80%;">
+  <div class="m-auto" style="height : 80%;font-weight: 700;">
     <div class="col-5 mx-auto mt-5 justify-content-center">
-      <div class="px-auto">
-        <img class="rounded-circle  " src="<%= user.thumbnail%>">
+      <div class="px-auto d-flex">
+        <img class="rounded-circle mx-auto" src="<%= user.thumbnail%>">
       </div>
     </div>
     <div class="col-7 col-lg-10 mx-auto text-center">
       <div>
-        <p class="text-black mt-2 abtext"> <b>
-            <%=user.username%>
+        <p class="text-black mt-2"> <b>
+            <strong style="font-weight: 900;font-family: Lora;font-size:2rem;"><%=user.username%></strong>
           </b> </p>
         <hr>
-        <p style=" margin-top: -5px;" class="text-black abtext">CA- <%=user.campambid%>
+        <p style=" margin-top: -5px;font-size: 1.4rem;" class="text-black abtext">CA- <%=user.campambid%>
         </p>
-        <p style=" margin-top: -15px;" class="text-black abtext">College name- <%=user.collegename%>
+        <p style=" margin-top: -15px;font-size: 1.4rem;" class="text-black abtext">College name- <%=user.collegename%>
         </p>
-        <p style="margin-top: -15px;" class="text-black abtext">Phone Number - <%=user.phno%>
+        <p style="margin-top: -15px;font-size: 1.4rem;" class="text-black abtext">Phone Number - <%=user.phno%>
         </p>
-        <p style="margin-top: -15px;" class="text-black abtext">Points - <%=user.points%>
+        <p style="margin-top: -15px;font-size: 1.4rem;" class="text-black abtext">Points - <%=user.points%>
         </p>
-        <a href="/profile">Edit Details-<i class="fas fa-edit"></i></a>
+        <a href="/profile"><button class="btn btn-danger"><i style="color: white;" class="fas fa-edit mr-3"></i><span style="text-decoration: none;color: white;font-family: 'Roboto';font-weight: 900;">Edit Details</span></button></a>
       </div>
     </div>
   </div>

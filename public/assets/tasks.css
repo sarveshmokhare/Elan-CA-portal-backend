@@ -1,0 +1,22 @@
+.innerboxt {
+  margin-left: 11vw;
+  margin-right: 11vw;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+}
+.inntoinn {
+  padding: 2vh;
+}
+.p {
+  font-size: 1.1em;
+  font-family: Roboto;
+  font-weight: 500;
+}
+@media screen and (max-width: 768px) {
+  .innerboxt {
+    margin-left: 4vw;
+    margin-right: 4vw;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+  }
+}

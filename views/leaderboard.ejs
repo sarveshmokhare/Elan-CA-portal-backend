@@ -1,40 +1,53 @@
 <%- include ('partials/header.ejs') %>
   <% count=0 %>
-    <table>
-      <tr>
-        <th>Rank</th>
-        <th>Ambassabor ID</th>
-        <th>Name</th>
-
-        <th>Points</th>
-      </tr>
-      <% users.forEach(function(user){ %>
-        <% count+=1;%>
-          <tr>
-            <td>
-              <%= count %>
-            </td>
-            <td>CA-<%= user.campambid %>
-            </td>
-            <% if (user.username===king.username){ rank=count;%>
-              <td>
-                <%= king.username %>
-              </td>
-              <% }else{%>
-                <td>
-                  <%= user.username %>
+    <div>
+      <div class="innerboxt">
+        <div class="inntoinn">
+          <h1 class="leaderboard-heading text-center" style="
+            text-align: center;
+            font-family: Lora;
+            font-weight: 900;
+            font-size: 2.6rem;
+          ">
+            Leaderboard
+          </h1>
+          <table class="leaderboard-table table table-striped table-responsive-md">
+            <thead>
+              <tr class="bg-dark text-white">
+                <th scope="col" class="font-weight-bold">Index</th>
+                <th scope="col" class="font-weight-bold">Name</th>
+                <th scope="col" class="font-weight-bold">College</th>
+                <th scope="col" class="font-weight-bold">Campus Ambassdor ID</th>
+                <th scope="col" class="font-weight-bold">Points</th>
+                <th scope="col" class="font-weight-bold">User Group</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <!-- For loop -->
+                <td class="index-element">
+                  
                 </td>
-                <%}%>
-
-                  <td>
-                    <%=user.points %>
-                  </td>
-          </tr>
-          <% })%>
-    </table>
-    <div class="yourrank">
-      <h3>Your rank</h3>
-      <%= rank %>
+                <td>
+                  
+                </td>
+                <td>
+                  
+                </td>
+                <td>
+                  
+                </td>
+                <td>
+                  
+                </td>
+                <td>
+                  
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
 
     <%- include ('partials/footer.ejs') %>

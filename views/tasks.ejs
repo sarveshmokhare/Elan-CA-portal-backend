@@ -1,3 +1,32 @@
 <%- include ('partials/header.ejs') %>
-<div class="task1"></div>
-<%- include ('partials/footer.ejs') %>
+   <div>
+      <div class="innerboxt">
+         <div class="inntoinn">
+            <h1 style="
+           text-align: center;
+           font-family: Lora;
+           font-weight: 900;
+           font-size: 2.6rem;
+         ">
+               Tasks
+            </h1>
+            <hr >
+            <br >
+            <div class="col-sm-6">
+               <div class="card">
+                 <div class="card-body">
+                   <h5 class="card-title">{{ task.title }}</h5>
+                   <p class="card-text">
+                     {{ task.text }}
+                   </p>
+                 </div>
+                 <ul class="list-group list-group-flush">
+                   <li class="list-group-item" :style="task.status?styleobject2:styleobject1">{{task.status?'Completed':'Not Completed'}}</li>
+                   <li class="list-group-item">Points : {{task.Points}}/{{task.totalPoints}}</li>
+                 </ul>
+               </div>
+             </div>
+         </div>
+      </div>
+   </div>
+   <%- include ('partials/footer.ejs') %>
