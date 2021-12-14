@@ -1,40 +1,5 @@
 <%- include ('partials/header.ejs') %>
   <% count=0 %>
-    <table>
-      <tr>
-        <th>Rank</th>
-        <th>Ambassabor ID</th>
-        <th>Name</th>
-
-        <th>Points</th>
-      </tr>
-      <% users.forEach(function(user){ %>
-        <% count+=1;%>
-          <tr>
-            <td>
-              <%= count %>
-            </td>
-            <td>CA-<%= user.campambid %>
-            </td>
-            <% if (user.username===king.username){ rank=count;%>
-              <td>
-                <%= king.username %>
-              </td>
-              <% }else{%>
-                <td>
-                  <%= user.username %>
-                </td>
-                <%}%>
-
-                  <td>
-                    <%=user.points %>
-                  </td>
-          </tr>
-          <% })%>
-    </table>
-    <div class="yourrank">
-      <h3>Your rank</h3>
-      <%= rank %>
-    </div>
+   
 
     <%- include ('partials/footer.ejs') %>
