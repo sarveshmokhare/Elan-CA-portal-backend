@@ -181,7 +181,8 @@
                         <li>
 
                             <a  class="nav-link text-white">
-                                <span class="changedesc">Hello {{name}}</span>
+                            
+                                <span class="changedesc"><i class="fas fa-user bi d-block mx-4 mb-1"></i>Hello <%=user.yourname%></span>
                             </a>
 
                         </li>
@@ -198,7 +199,7 @@
                         <%}%>
                 </ul>
                 <% if (!user){ %>
-                    <span class="changedesc">Hello Guest</span>
+                    <span class="changedesc"><i class="fas fa-user bi d-block mx-4 mb-1"></i>Hello Guest</span>
                     <span class="me-4"></span>
                     <button class="btn btn-warning text-white me-2"><a href="/google"
                             style="text-decoration: none;color: white;font-family: 'Roboto';"><i
