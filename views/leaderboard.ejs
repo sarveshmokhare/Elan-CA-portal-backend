@@ -1,5 +1,72 @@
 <%- include ('partials/header.ejs') %>
   <% count=0 %>
-   
+    <div>
+      <div class="innerboxt">
+        <div class="inntoinn">
+          <h1 class="leaderboard-heading text-center" style="
+            text-align: center;
+            font-family: Lora;
+            font-weight: 900;
+            font-size: 2.6rem;
+          ">
+            Leaderboard
+          </h1>
+          <table class="leaderboard-table table table-striped table-responsive-md">
+            <thead>
+              <tr class="bg-dark text-white">
+                <th scope="col" class="font-weight-bold">Index</th>
+                <th scope="col" class="font-weight-bold">Name</th>
+                <th scope="col" class="font-weight-bold">College</th>
+                <th scope="col" class="font-weight-bold">Campus Ambassdor ID</th>
+                <th scope="col" class="font-weight-bold">Points</th>
+                <th scope="col" class="font-weight-bold">User Group</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% users.forEach(function(user){ %>
+                <% count+=1;%>
+                  <tr>
+                    <td>
+                      <%= count %>
+                    </td>
 
+                    <% if (user.username===king.username){ rank=count;%>
+                      <td>
+                        <%= king.username %>
+                      </td>
+                      <% }else{%>
+                        <td>
+                          <%= user.username %>
+                        </td>
+                        <%}%>
+
+                          <td>
+                            <%=user.collegename %>
+                          </td>
+                          <td>CA-<%= user.campambid %>
+                          </td>
+                          <td>
+                            <%=user.points %>
+                          </td>
+                          <td>
+                            <%if(count< 10){ %>
+                              platinum
+                              <% }else if(count>10 && count < 100){ %>
+                                  gold
+                                  <% }else{%>
+                                    silver
+                                    <%}%>
+                          </td>
+                  </tr>
+                  <% })%>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="btn btn-warning d-flex-column m-4  p-3" >
+      <h4><strong>Your rank : <%= rank %></strong>
+      </h4>
+
+    </div>
     <%- include ('partials/footer.ejs') %>
