@@ -251,40 +251,210 @@
         <hr>
         <br>
         <div class="row">
-          <% tasks.forEach(function(task){%>
-            <div class="col-lg-6">
-              <div class="card d-flex-row mx-0 my-3">
-                <div class="card-body m-3">
-                  <h5 class="card-title"><strong>
-                      <h3 style="font-weight: 900;">
-                        <%= task.taskname%>
-                      </h3>
-                    </strong></h5>
-                  <p class="card-text" style="font-weight:400">
-                    <%= task.taskdescription%>
-                  </p>
-                </div>
-                <ul class="list-group list-group-flush">
-                  <div class="d-flex">
-                    <li class="list-group-item m-3 d-flex align-center mx-auto" style="border: none;">
-                      <%if (user.task0[0]){%><span class="btn btn-success">Completed<%}else{%><span
-                              class="btn btn-danger">Not
-                              Completed</span>
-                            <%}%>
-                    </li>
+          <% count=0 %>
+            <% tasks.forEach(function(task){%>
+              <div class="col-lg-6">
+                <div class="card d-flex-row mx-0 my-3">
+                  <div class="card-body m-3">
+                    <h5 class="card-title"><strong>
+                        <h3 style="font-weight: 900;">
+                          <%= task.taskname%>
+                        </h3>
+                      </strong></h5>
+                    <p class="card-text" style="font-weight:400">
+                      <%= task.taskdescription%>
+                    </p>
                   </div>
-                  <li class="btn btn-warning p-2"><strong>Points : <%if (user.task0[1]){%>
-                        <%= user.task0[1]%>
-                          <%}else{%>0
-                            <%}%>/ <%=task.taskpoints%></strong>
-                  </li>
-                </ul>
+                  <% switch (count){ case 0 : %>
+                    <ul class="list-group list-group-flush">
+                      <div class="d-flex">
+                        <li class="list-group-item m-3 d-flex align-center mx-auto" style="border: none;">
+                          <%if (user.task0[0]){%><span class="btn btn-success">Completed<%}else{%><span
+                                  class="btn btn-danger">Not
+                                  Completed</span>
+                                <%}%>
+                        </li>
+                      </div>
+                      <li class="btn btn-warning p-2"><strong>Points : <%if (user.task0[1]){%>
+                            <%= user.task0[1]%>
+                              <%}else{%>0
+                                <%}%>/ <%=task.taskpoints%></strong>
+                      </li>
+                    </ul>
+                    <% ;break; %>
+                      <% case 1 : %>
+                        <ul class="list-group list-group-flush">
+                          <div class="d-flex">
+                            <li class="list-group-item m-3 d-flex align-center mx-auto" style="border: none;">
+                              <%if (user.task1[0]){%><span class="btn btn-success">Completed<%}else{%><span
+                                      class="btn btn-danger">Not
+                                      Completed</span>
+                                    <%}%>
+                            </li>
+                          </div>
+                          <li class="btn btn-warning p-2"><strong>Points : <%if (user.task1[1]){%>
+                                <%= user.task1[1]%>
+                                  <%}else{%>0
+                                    <%}%>/ <%=task.taskpoints%></strong>
+                          </li>
+                        </ul>
+                        <% ;break; %>
+                          <% case 2 : %>
+                            <ul class="list-group list-group-flush">
+                              <div class="d-flex">
+                                <li class="list-group-item m-3 d-flex align-center mx-auto" style="border: none;">
+                                  <%if (user.task2[0]){%><span class="btn btn-success">Completed<%}else{%><span
+                                          class="btn btn-danger">Not
+                                          Completed</span>
+                                        <%}%>
+                                </li>
+                              </div>
+                              <li class="btn btn-warning p-2"><strong>Points : <%if (user.task2[1]){%>
+                                    <%= user.task2[1]%>
+                                      <%}else{%>0
+                                        <%}%>/ <%= task.taskpoints%></strong>
+                              </li>
+                            </ul>
+                            <% ;break; %>
+                              <% case 3 : %>
+                                <ul class="list-group list-group-flush">
+                                  <div class="d-flex">
+                                    <li class="list-group-item m-3 d-flex align-center mx-auto" style="border: none;">
+                                      <%if (user.task3[0]){%><span class="btn btn-success">Completed<%}else{%><span
+                                              class="btn btn-danger">Not
+                                              Completed</span>
+                                            <%}%>
+                                    </li>
+                                  </div>
+                                  <li class="btn btn-warning p-2"><strong>Points : <%if (user.task3[1]){%>
+                                        <%= user.task3[1]%>
+                                          <%}else{%>0
+                                            <%}%>/ <%= task.taskpoints%></strong>
+                                  </li>
+                                </ul>
+                                <% ;break; %>
+                                  <% case 4 : %>
+                                    <ul class="list-group list-group-flush">
+                                      <div class="d-flex">
+                                        <li class="list-group-item m-3 d-flex align-center mx-auto"
+                                          style="border: none;">
+                                          <%if (user.task4[0]){%><span class="btn btn-success">Completed<%}else{%><span
+                                                  class="btn btn-danger">Not
+                                                  Completed</span>
+                                                <%}%>
+                                        </li>
+                                      </div>
+                                      <li class="btn btn-warning p-2"><strong>Points : <%if (user.task4[1]){%>
+                                            <%= user.task4[1]%>
+                                              <%}else{%>0
+                                                <%}%>/ <%= task.taskpoints%></strong>
+                                      </li>
+                                    </ul>
+                                    <% ;break; %>
+                                      <% case 5 : %>
+                                        <ul class="list-group list-group-flush">
+                                          <div class="d-flex">
+                                            <li class="list-group-item m-3 d-flex align-center mx-auto"
+                                              style="border: none;">
+                                              <%if (user.task5[0]){%><span class="btn btn-success">Completed<%}else{%>
+                                                    <span class="btn btn-danger">Not
+                                                      Completed</span>
+                                                    <%}%>
+                                            </li>
+                                          </div>
+                                          <li class="btn btn-warning p-2"><strong>Points : <%if (user.task5[1]){%>
+                                                <%= user.task5[1]%>
+                                                  <%}else{%>0
+                                                    <%}%>/ <%= task.taskpoints%></strong>
+                                          </li>
+                                        </ul>
+                                        <% ;break; %>
+                                          <% case 6 : %>
+                                            <ul class="list-group list-group-flush">
+                                              <div class="d-flex">
+                                                <li class="list-group-item m-3 d-flex align-center mx-auto"
+                                                  style="border: none;">
+                                                  <%if (user.task6[0]){%><span class="btn btn-success">Completed
+                                                      <%}else{%><span class="btn btn-danger">Not
+                                                          Completed</span>
+                                                        <%}%>
+                                                </li>
+                                              </div>
+                                              <li class="btn btn-warning p-2"><strong>Points : <%if (user.task6[1]){%>
+                                                    <%= user.task6[1]%>
+                                                      <%}else{%>0
+                                                        <%}%>/ <%= task.taskpoints%></strong>
+                                              </li>
+                                            </ul>
+                                            <% ;break; %>
+                                              <% case 7 : %>
+                                                <ul class="list-group list-group-flush">
+                                                  <div class="d-flex">
+                                                    <li class="list-group-item m-3 d-flex align-center mx-auto"
+                                                      style="border: none;">
+                                                      <%if (user.task7[0]){%><span class="btn btn-success">Completed
+                                                          <%}else{%><span class="btn btn-danger">Not
+                                                              Completed</span>
+                                                            <%}%>
+                                                    </li>
+                                                  </div>
+                                                  <li class="btn btn-warning p-2"><strong>Points : <%if
+                                                        (user.task7[1]){%>
+                                                        <%= user.task7[1]%>
+                                                          <%}else{%>0
+                                                            <%}%>/ <%= task.taskpoints%></strong>
+                                                  </li>
+                                                </ul>
+                                                <% ;break; %>
+                                                  <% case 8 : %>
+                                                    <ul class="list-group list-group-flush">
+                                                      <div class="d-flex">
+                                                        <li class="list-group-item m-3 d-flex align-center mx-auto"
+                                                          style="border: none;">
+                                                          <%if (user.task8[0]){%><span class="btn btn-success">Completed
+                                                              <%}else{%><span class="btn btn-danger">Not
+                                                                  Completed</span>
+                                                                <%}%>
+                                                        </li>
+                                                      </div>
+                                                      <li class="btn btn-warning p-2"><strong>Points : <%if
+                                                            (user.task8[1]){%>
+                                                            <%= user.task8[1]%>
+                                                              <%}else{%>0
+                                                                <%}%>/ <%= task.taskpoints%></strong>
+                                                      </li>
+                                                    </ul>
+                                                    <% ;break; %>
+                                                      <% case 9 : %>
+                                                        <ul class="list-group list-group-flush">
+                                                          <div class="d-flex">
+                                                            <li class="list-group-item m-3 d-flex align-center mx-auto"
+                                                              style="border: none;">
+                                                              <%if (user.task9[0]){%><span
+                                                                  class="btn btn-success">Completed<%}else{%><span
+                                                                      class="btn btn-danger">Not
+                                                                      Completed</span>
+                                                                    <%}%>
+                                                            </li>
+                                                          </div>
+                                                          <li class="btn btn-warning p-2"><strong>Points : <%if
+                                                                (user.task9[1]){%>
+                                                                <%= user.task9[1]%>
+                                                                  <%}else{%>0
+                                                                    <%}%>/ <%= task.taskpoints%></strong>
+                                                          </li>
+                                                        </ul>
+                                                        <% ;break; %>
+                                                          <%}%>
+
+
+                                                            <% count+=1;%>
+                </div>
               </div>
-            </div>
 
 
-            <%})%>
-              <!--       <div class="col-lg-6">
+              <%})%>
+                <!--       <div class="col-lg-6">
 
             <div class="card d-flex-row mx-0 my-3">
               <div class="card-body m-3">
