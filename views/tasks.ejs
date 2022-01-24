@@ -251,7 +251,40 @@
         <hr>
         <br>
         <div class="row">
-          <div class="col-lg-6">
+          <% tasks.forEach(function(task){%>
+            <div class="col-lg-6">
+              <div class="card d-flex-row mx-0 my-3">
+                <div class="card-body m-3">
+                  <h5 class="card-title"><strong>
+                      <h3 style="font-weight: 900;">
+                        <%= task.taskname%>
+                      </h3>
+                    </strong></h5>
+                  <p class="card-text" style="font-weight:400">
+                    <%= task.taskdescription%>
+                  </p>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <div class="d-flex">
+                    <li class="list-group-item m-3 d-flex align-center mx-auto" style="border: none;">
+                      <%if (user.task0[0]){%><span class="btn btn-success">Completed<%}else{%><span
+                              class="btn btn-danger">Not
+                              Completed</span>
+                            <%}%>
+                    </li>
+                  </div>
+                  <li class="btn btn-warning p-2"><strong>Points : <%if (user.task0[1]){%>
+                        <%= user.task0[1]%>
+                          <%}else{%>0
+                            <%}%>/ <%=task.taskpoints%></strong>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+
+            <%})%>
+              <!--       <div class="col-lg-6">
 
             <div class="card d-flex-row mx-0 my-3">
               <div class="card-body m-3">
@@ -540,7 +573,7 @@
                 </li>
               </ul>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
