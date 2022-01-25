@@ -21,7 +21,7 @@ mongoose
     UseUNifiedTopology: true,
   })
   .then((result) => {
-    app.listen(process.env.PORT || 80);
+    app.listen(process.env.PORT || 3000);
     console.log("connected");
   })
   .catch((err) => console.log(err));
