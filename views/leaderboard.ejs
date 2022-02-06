@@ -49,10 +49,10 @@
                             <%=user.points %>
                           </td>
                           <td>
-                            <%if(count< 10){ %>
-                              platinum
-                              <% }else if(count>10 && count < 100){ %>
-                                  gold
+                            <%if(count<= 10){ %>
+                              King
+                              <% }else if(count>10 && count <= 25){ %>
+                                  Queen
                                   <% }else{%>
                                     silver
                                     <%}%>
@@ -64,7 +64,7 @@
         </div>
       </div>
     </div>
-    <div class="btn btn-warning d-flex-column m-4  p-3" >
+    <div class="btn btn-warning d-flex-column m-4  p-3">
       <h4><strong>Your rank : <%= rank %></strong>
       </h4>
 
