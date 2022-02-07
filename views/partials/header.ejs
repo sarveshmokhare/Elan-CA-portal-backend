@@ -1,213 +1,255 @@
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CA-portal</title>
-    <link rel="shortcut icon" href="/assets/logo1.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/assets/logo1.png" type="image/x-icon" />
     <!-- <link rel = "stylesheet" href = "../public/assets/form.css"> -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Gorditas&family=Montserrat:wght@300&display=swap"
-        rel="stylesheet">
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Gorditas&family=Montserrat:wght@300&display=swap"
+      rel="stylesheet"
+    />
     <!-- <link href="https://fonts.googleapi s.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet"> -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
     <style>
-        * {
-            font-family: Roboto;
-            font-weight: 600;
+      * {
+        font-family: Roboto;
+        font-weight: 600;
+      }
+
+      @-moz-document url-prefix() {
+        /* Disable scrollbar Firefox */
+        html {
+          scrollbar-width: none;
         }
+      }
 
-        @-moz-document url-prefix() {
+      ::-webkit-scrollbar {
+        display: none;
+      }
 
-            /* Disable scrollbar Firefox */
-            html {
-                scrollbar-width: none;
-            }
-        }
+      ::-webkit-scrollbar-button {
+        display: none;
+      }
 
-        ::-webkit-scrollbar {
-            display: none;
-        }
+      body {
+        -ms-overflow-style: none;
+      }
 
-        ::-webkit-scrollbar-button {
-            display: none;
-        }
+      .styleheading {
+        text-align: left;
+        letter-spacing: 2px;
+        font-size: 6.5vw;
+      }
 
-        body {
-            -ms-overflow-style: none;
-        }
-
+      @media screen and (max-width: 700px) {
         .styleheading {
-            text-align: left;
-            letter-spacing: 2px;
-            font-size: 6.5vw
+          text-align: left;
+          letter-spacing: 2px;
+          font-size: 2.4rem;
         }
+      }
 
-        @media screen and (max-width:700px) {
-            .styleheading {
-                text-align: left;
-                letter-spacing: 2px;
-                font-size: 2.4rem;
-            }
-        }
+      .innerboxt {
+        margin-left: 5vw;
+        margin-right: 5vw;
+        margin-top: 10vh;
+        margin-bottom: 10vh;
+      }
 
-        .innerboxt {
-            margin-left: 5vw;
-            margin-right: 5vw;
-            margin-top: 10vh;
-            margin-bottom: 10vh;
-        }
+      .inntoinn {
+        padding: 2vh;
+      }
 
-        .inntoinn {
-            padding: 2vh;
-        }
+      .p {
+        font-size: 1.1em;
+        font-family: "Roboto";
+        font-weight: 500;
+      }
 
-        .p {
-            font-size: 1.1em;
-            font-family: 'Roboto';
-            font-weight: 500;
-        }
+      .span {
+        font-size: 1.4em;
+        font-family: Roboto;
+        font-weight: 600;
+      }
 
-        .span {
-            font-size: 1.4em;
-            font-family: Roboto;
-            font-weight: 600;
-        }
+      .span li {
+        font-size: 0.8em;
+        font-family: Roboto;
+        font-weight: 500;
+      }
 
-        .span li {
-            font-size: 0.8em;
-            font-family: Roboto;
-            font-weight: 500;
-        }
+      .mx-3 {
+        color: #1abcbc;
+      }
 
-        .mx-3 {
-            color: #1ABCBC;
-        }
+      .changedesc {
+        color: white;
+        font-family: Roboto;
+        font-weight: 600;
+        font-size: 18px;
+        letter-spacing: 0.5px;
+      }
 
+      .bi {
+        font-size: 24px;
+        margin: auto;
+      }
 
-        .changedesc {
-            color: white;
-            font-family: Roboto;
-            font-weight: 600;
-            font-size: 18px;
-            letter-spacing: 0.5px;
-        }
+      .g-icon {
+        color: #1abc9c;
+      }
 
-        .bi {
-            font-size: 24px;
-            margin: auto;
-        }
+      .g-icon-x {
+        color: red;
+      }
 
-        .g-icon {
-            color: #1abc9c;
-        }
+      .fa-medal {
+        color: orange;
+      }
 
-        .g-icon-x {
-            color: red;
-        }
+      .fa-clipboard-list {
+        color: #149ddd;
+      }
 
-        .fa-medal {
-            color: orange;
-        }
+      .list-unstyled li {
+        font-size: 1.1em;
+        font-family: Roboto;
+        font-weight: 500;
+      }
 
-        .fa-clipboard-list {
-            color: #149DDD;
-        }
-
-        .list-unstyled li {
-            font-size: 1.1em;
-            font-family: Roboto;
-            font-weight: 500;
-        }
-
-        .list-unstyled li span {
-            font-size: 1.1em;
-            font-family: Roboto;
-            font-weight: 500;
-        }
+      .list-unstyled li span {
+        font-size: 1.1em;
+        font-family: Roboto;
+        font-weight: 500;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="px-3 py-1 text-white" style="background: rgb(49, 151, 149)">
-        <div class="container">
-            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                <a to="/" class="d-flex align-items-center my-1 my-lg-0 me-lg-auto text-white text-decoration-none">
-                    <img src="/assets/logo.png" height="60" width="200" />
-                </a>
-                <ul class="nav col-12 col-lg-auto my-1 justify-content-center my-md-0 text-small">
-                    <li>
-                        <a href="/" class="nav-link text-white">
-                            <i class="fas fa-house-user bi d-block mx-2 mb-1"></i>
-                            Home
-                        </a>
-                    </li>
-                    <% if (user){ %>
-                        <li>
+      <div class="container">
+        <div
+          class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
+        >
+          <a
+            to="/"
+            class="d-flex align-items-center my-1 my-lg-0 me-lg-auto text-white text-decoration-none"
+          >
+            <img src="/assets/logo.png" height="60" width="200" />
+          </a>
+          <ul
+            class="nav col-12 col-lg-auto my-1 justify-content-center my-md-0 text-small"
+          >
+            <li>
+              <a href="/" class="nav-link text-white">
+                <i class="fas fa-house-user bi d-block mx-2 mb-1"></i>
+                Home
+              </a>
+            </li>
+            <% if (user){ %>
+            <li>
+              <a href="/profile/leaderboard" class="nav-link text-white">
+                <i class="fas fa-trophy bi d-block mx-4 mb-1"></i>
+                Leaderboard
+              </a>
+            </li>
+            <li>
+              <a href="/profile/tasks" class="nav-link text-white">
+                <i class="fas fa-tasks bi d-block mx-2 mb-1"></i>
+                Tasks
+              </a>
+            </li>
+            <li>
+              <a href="/profile/user" class="nav-link text-white">
+                <i class="fas fa-address-card bi d-block mx-2 mb-1"></i>
+                Profile
+              </a>
+            </li>
+            <li>
+              <a class="nav-link text-white">
+                <span class="changedesc"
+                  ><i class="fas fa-user bi d-block mx-4 mb-1"></i>Hello
+                  <%=user.yourname%>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a
+                class="nav-link text-white"
+                href="/logout"
+                style="
+                  text-decoration: none;
+                  color: white;
+                  font-family: 'Roboto';
+                  font-weight: 900;
+                "
+              >
+                <button class="btn btn-warning text-white me-2">
+                  <i class="fas fa-sign-out-alt me-2 g-icon-x"></i
+                  ><span
+                    style="
+                      text-decoration: none;
+                      color: white;
+                      font-family: 'Roboto';
+                      font-weight: 900;
+                    "
+                    >Logout</span
+                  >
+                </button>
+              </a>
+            </li>
 
-                            <a href="/profile/leaderboard" class="nav-link text-white">
-                                <i class="fas fa-trophy bi d-block mx-4 mb-1"></i>
-                                Leaderboard
-                            </a>
-
-                        </li>
-                        <li>
-
-                            <a href="/profile/tasks" class="nav-link text-white">
-                                <i class="fas fa-tasks bi d-block mx-2 mb-1"></i>
-                                Tasks
-                            </a>
-                        </li>
-                        <li>
-
-                            <a href="/profile/user" class="nav-link text-white">
-                                <i class="fas fa-address-card bi d-block mx-2 mb-1"></i>
-                                Profile
-                            </a>
-
-                        </li>
-                        <li>
-
-                            <a class="nav-link text-white">
-
-                                <span class="changedesc"><i class="fas fa-user bi d-block mx-4 mb-1"></i>Hello
-                                    <%=user.yourname%>
-                                </span>
-                            </a>
-
-                        </li>
-                        <li>
-                            <a class="nav-link text-white" href="/logout"
-                                style="text-decoration: none;color: white;font-family: 'Roboto';font-weight: 900;">
-
-                                <button class="btn btn-warning text-white me-2"><i
-                                        class="fas fa-sign-out-alt me-2 g-icon-x"></i><span
-                                        style="text-decoration: none;color: white;font-family: 'Roboto';font-weight: 900;">Logout</span></button>
-                            </a>
-
-                        </li>
-
-                        <%}%>
-                </ul>
-                <% if (!user){ %>
-                    <span class="changedesc"><i class="fas fa-user bi d-block mx-4 mb-1"></i>Hello Guest</span>
-                    <span class="me-4"></span>
-                    <button class="btn btn-warning text-white me-2"><a href="/google"
-                            style="text-decoration: none;color: white;font-family: 'Roboto';"><i
-                                class="fab fa-google me-2 g-icon"></i>Login with Google</a></button>
-                    <%}%>
-            </div>
+            <%}%>
+          </ul>
+          <% if (!user){ %>
+          <span class="changedesc"
+            ><i class="fas fa-user bi d-block mx-4 mb-1"></i>Hello Guest</span
+          >
+          <span class="me-4"></span>
+          <button class="btn btn-warning text-white me-2">
+            <a
+              href="/google"
+              style="text-decoration: none; color: white; font-family: 'Roboto'"
+              ><i class="fab fa-google me-2 g-icon"></i>Login with Google</a
+            >
+          </button>
+          <%}%>
         </div>
+      </div>
     </div>
+  </body>
+</html>
