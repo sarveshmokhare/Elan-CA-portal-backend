@@ -53,8 +53,14 @@
                               King
                               <% }else if(count>10 && count <= 25){ %>
                                   Queen
-                                  <% }else{%>
-                                    silver
+                                  <% }else if(count>25 && count<= 50){%>
+                                    Rook
+                                    <% }else if(count>50 && count<= 100){%>
+                                      Knight
+                                      <% }else if(count>100 && count<= 200){%>
+                                        Bishop
+                                        <% }else {%>
+                                          Pawn
                                     <%}%>
                           </td>
                   </tr>
