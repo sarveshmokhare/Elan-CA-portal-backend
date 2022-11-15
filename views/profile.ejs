@@ -9,6 +9,10 @@
             <span style="width:200px;">Your Name:</span> <input type="text" class="mx-2" name="Yourname" placeholder="Your name" required
               value=<%=user.yourname %>>
           </div>
+          <div class="name py-1">
+            <span style="width:200px;">Your userName:</span> <input type="text" class="mx-2" name="username2" placeholder="Your name"
+              required value=<%=user.username2 %>>
+          </div>
           <div class="college py-1">
             <span style="width:200px;">College Name:</span> <input type="text" name="CollegeName" class="mx-2" placeholder="CollegeName" required
               value=<%=user.collegename%>
@@ -42,13 +46,14 @@
       const yourname = form.Yourname.value;
       const collegename = form.CollegeName.value;
       const phone = form.Phone.value;
+      const username2=form.username2.value
 
       if (phone.length !== 10) {
-        error.innerHTML = "Not valid vro";
+        error.innerHTML = "Not valid";
       } else {
         const result = await fetch("/profile", {
           method: "POST",
-          body: JSON.stringify({ yourname, collegename, phone }),
+          body: JSON.stringify({ yourname, collegename, phone,username2 }),
           headers: { "Content-Type": "application/json" },
         }).then((res) => res.json());
 

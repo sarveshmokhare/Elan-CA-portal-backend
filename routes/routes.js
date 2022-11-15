@@ -28,13 +28,18 @@ route.get("/profile", (req, res) => {
   res.render("profile", { user: req.user });
 });
 
-route.post("/profile", (req, res) => {
-  const { yourname, collegename, phone } = req.body;
+route.post("/profile", async(req, res) => {
+  const { yourname,username2 ,collegename, phone } = req.body;
   console.log(yourname);
   var myquery = { googleID: req.user.googleID };
   var newvalues = {
-    $set: { yourname: yourname, collegename: collegename, phno: phone },
+    $set: { yourname: yourname,username2:username2 ,collegename: collegename, phno: phone },
   };
+  const username_check = await User.find({ $and: [{ username2: username2 }, { googleID: { $ne: req.user.googleID } }] })
+  if(username_check.length==1)alert("username already taken")
+
+  const phno_check = await User.find({$and:[{ phno: phone },{googleID:{$ne:req.user.googleID}}]})
+  if (phno_check.length == 1) alert("phone number already in use")
   User.updateOne(myquery, newvalues, function (err) {
     if (err) {
       return res.json({ status: "failed" });
@@ -64,7 +69,7 @@ route.get("/profile/leaderboard", authCheck, (req, res) => {
         console.log(users);
       });
   } else {
-    alert("For that u have to enter your Details vro");
+    alert("For that u have to enter your Details");
     res.redirect("/profile");
   }
 });
@@ -74,7 +79,7 @@ route.get("/profile/tasks", async (req, res) => {
     console.log(tasks);
     res.render("tasks", { tasks: tasks, user: req.user });
   } else {
-    alert("For that u have to enter your Details vro");
+    alert("For that u have to enter your Details");
     res.redirect("/profile");
   }
 });

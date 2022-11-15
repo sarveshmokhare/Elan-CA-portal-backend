@@ -1,10 +1,11 @@
 const mongoose = require("mongoose");
 const UserSchema = new mongoose.Schema({
   yourname: { type: String },
+  username2:{type:String,unique:true},
   username: { type: String, required: true },
   collegename: { type: String, unique: false },
   thumbnail: { type: String },
-  phno: { type: Number, unique: false },
+  phno: { type: Number, unique: true },
   campambid: { type: Number, default: 0 },
   googleID: { type: Number },
   task0: { type: Array, default: 0 },

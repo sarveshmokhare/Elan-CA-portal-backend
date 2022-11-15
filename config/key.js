@@ -5,7 +5,7 @@ module.exports = {
     Client_secret: "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",
   },
   mongo: {
-    code: "mongodb+srv://Arun_Siddardha:*p9z2kmdUKGBNp%40@cluster0.iqqhw.mongodb.net/CA_data",
+    code: "mongodb://localhost:27017",
   },
   session: {
     cookiekey: "this is secret",
