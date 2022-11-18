@@ -6,20 +6,20 @@
           <h2 class="text-center mt-4" style="font-size: 2em;font-family: Lora;font-weight: 900;">Your Details</h2>
           <hr>
           <div class="name py-1">
-            <span style="width:200px;">Your Name:</span> <input type="text" class="mx-2" name="Yourname" placeholder="Your name" required
+            <span style="width:200px;">Your Full Name:</span> <input type="text" class="mx-2" name="Yourname" placeholder="Full Name" required
               value=<%=user.yourname %>>
           </div>
           <div class="name py-1">
-            <span style="width:200px;">Your userName:</span> <input type="text" class="mx-2" name="username2" placeholder="Your name"
+            <span style="width:200px;">Your username:</span> <input type="text" class="mx-2" name="username2" placeholder="username"
               required value=<%=user.username2 %>>
           </div>
           <div class="college py-1">
-            <span style="width:200px;">College Name:</span> <input type="text" name="CollegeName" class="mx-2" placeholder="CollegeName" required
+            <span style="width:200px;">Your College Name:</span> <input type="text" name="CollegeName" class="mx-2" placeholder="College Name" required
               value=<%=user.collegename%>
             >
           </div>
           <div class="phone py-1">
-            <span style="width:200px;">Phone number:</span><input type="text" class="mx-2" name="Phone" placeholder="Phone number" required
+            <span style="width:200px;">Your Mobile Number:</span><input type="text" class="mx-2" name="Phone" placeholder="Mobile Number" required
               value=<%=user.phno %>>
           </div>
           <div class="error"></div>
@@ -49,7 +49,7 @@
       const username2=form.username2.value
 
       if (phone.length !== 10) {
-        error.innerHTML = "Not valid";
+        error.innerHTML = "Please enter a valid mobile number!";
       } else {
         const result = await fetch("/profile", {
           method: "POST",

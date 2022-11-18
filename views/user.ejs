@@ -2,8 +2,12 @@
   <div class="mt-3 pt-3" style="height : 100%;font-weight: 700;">
     <div class="col-5 mx-auto mt-5 justify-content-center">
       <div class="px-auto d-flex">
-        <img class="rounded-circle mx-auto" src="<%= user.thumbnail%>"
-          alt="https://www.google.com/search?q=user+avatar+images&rlz=1C1UEAD_enIN928IN928&sxsrf=AOaemvKk7O0l5t3dGHiAvAB_lAg55d2AXg:1639496458073&tbm=isch&source=iu&ictx=1&fir=u50PYoIwTXl6tM%252COy32HaiPLChIlM%252C_%253BXiYNiaRCjiN4zM%252CSvM6I7TQvqp7qM%252C_%253BKwgKeh_0RsV5QM%252CrOW1_0j-A5xTeM%252C_%253B_tfY4jaB-Ufo8M%252CKVh5CcJRidka2M%252C_%253BI1iyL-wgVfUpoM%252C4N-ldCWOe1oafM%252C_%253B4kXGls3qUNG46M%252Cu1SY3va6wsUW9M%252C_%253B1QU38Onecsx45M%252CjkSSRW6HEZViEM%252C_%253BE-7lrOraUkFP2M%252CC_RV8uf_jQA1">
+        <% if (user.thumbnail) { %>
+          <img class="rounded-circle mx-auto" src="<%= user.thumbnail%>"
+        <% } %>
+        <% if (!user.thumbnail) { %>
+          <img class="rounded-circle mx-auto" src="https://www.pngitem.com/pimgs/m/294-2947257_interface-icons-user-avatar-profile-user-avatar-png.png"
+        <% } %>
       </div>
     </div>
     <div class="col-7 col-lg-10 mx-auto text-center">
@@ -14,11 +18,11 @@
             </strong>
           </b> </p>
         <hr>
-        <p style=" margin-top: -5px;font-size: 1.4rem;" class="text-black abtext">CA- <%=user.campambid%>
+        <p style=" margin-top: -5px;font-size: 1.4rem;" class="text-black abtext">CA - <%=user.campambid%>
         </p>
         <p style="margin-top: -15px;font-size: 1.4rem;" class="text-black abtext">Username - <%=user.username2%>
         </p>
-        <p style=" margin-top: -15px;font-size: 1.4rem;" class="text-black abtext">College name- <%=user.collegename%>
+        <p style=" margin-top: -15px;font-size: 1.4rem;" class="text-black abtext">College Name - <%=user.collegename%>
         </p>
         <p style="margin-top: -15px;font-size: 1.4rem;" class="text-black abtext">Phone Number - <%=user.phno%>
         </p>

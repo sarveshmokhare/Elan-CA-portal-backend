@@ -23,16 +23,17 @@ passport.use(
         if (user) {
           done(null, user);
         } else {
-          console.log(profile);
           var num = await User.countDocuments();
           new User({
             username: profile.displayName,
             googleID: profile.id,
             thumbnail: profile._json.picture,
             campambid: num + 1001,
+            email: profile._json.email,
           })
-            .save()
-            .then((user) => {
+          .save()
+          .then((user) => {
+              console.log(profile);
               done(null, user);
               console.log(user);
             })

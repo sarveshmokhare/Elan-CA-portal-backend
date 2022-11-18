@@ -18,7 +18,7 @@ const authCheck = (req, res, next) => {
 route.get(
   "/google",
   passport.authenticate("google", {
-    scope: ["profile"],
+    scope: ["profile", "email"],
   })
 );
 route.get("/google/redirect", passport.authenticate("google"), (req, res) => {
@@ -28,17 +28,17 @@ route.get("/profile", (req, res) => {
   res.render("profile", { user: req.user });
 });
 
-route.post("/profile", async(req, res) => {
-  const { yourname,username2 ,collegename, phone } = req.body;
+route.post("/profile", async (req, res) => {
+  const { yourname, username2, collegename, phone } = req.body;
   console.log(yourname);
   var myquery = { googleID: req.user.googleID };
   var newvalues = {
-    $set: { yourname: yourname,username2:username2 ,collegename: collegename, phno: phone },
+    $set: { yourname: yourname, username2: username2, collegename: collegename, phno: phone },
   };
   const username_check = await User.find({ $and: [{ username2: username2 }, { googleID: { $ne: req.user.googleID } }] })
-  if(username_check.length==1)alert("username already taken")
+  if (username_check.length == 1) alert("username already taken")
 
-  const phno_check = await User.find({$and:[{ phno: phone },{googleID:{$ne:req.user.googleID}}]})
+  const phno_check = await User.find({ $and: [{ phno: phone }, { googleID: { $ne: req.user.googleID } }] })
   if (phno_check.length == 1) alert("phone number already in use")
   User.updateOne(myquery, newvalues, function (err) {
     if (err) {
@@ -50,7 +50,17 @@ route.post("/profile", async(req, res) => {
 
 route.get("/profile/user", authCheck, (req, res) => {
   if (req.user.collegename) {
-    res.render("user", { user: req.user });
+
+    let userData = req.user;
+    const totalPoints = userData.task0[1] + userData.task1[1] + userData.task2[1] + userData.task3[1] + userData.task4[1] + userData.task5[1] + userData.task6[1] + userData.task7[1] + userData.task8[1] + userData.task9[1];
+
+    console.log("req.user: ", req.user);
+    User.findOneAndUpdate({ googleID: req.user.googleID }, { points: totalPoints }, err => {
+      if (!err) res.render("user", { user: req.user });
+
+      else res.json({ status: "failed", errorMessage: err });
+    });
+
   } else {
     res.redirect("/profile");
   }
