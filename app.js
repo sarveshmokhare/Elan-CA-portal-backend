@@ -14,7 +14,7 @@ app.use(express.static("public"));
 app.use(express.json());
 app.use(cookieParser());
 //connection to database
-const dbURI = keys.mongo.code;
+const dbURI = keys.mongo.prod_code;
 mongoose
   .connect(dbURI, {
     useNewUrlParser: true,

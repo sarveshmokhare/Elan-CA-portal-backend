@@ -3,10 +3,10 @@
     <div class="col-5 mx-auto mt-5 justify-content-center">
       <div class="px-auto d-flex">
         <% if (user.thumbnail) { %>
-          <img class="rounded-circle mx-auto" src="<%= user.thumbnail%>"
+          <img class="rounded-circle mx-auto" src="<%= user.thumbnail%>" alt="profile-pic"
         <% } %>
         <% if (!user.thumbnail) { %>
-          <img class="rounded-circle mx-auto" src="https://www.pngitem.com/pimgs/m/294-2947257_interface-icons-user-avatar-profile-user-avatar-png.png"
+          <img class="rounded-circle mx-auto" src="https://www.pngitem.com/pimgs/m/294-2947257_interface-icons-user-avatar-profile-user-avatar-png.png" alt="profile-pic2"
         <% } %>
       </div>
     </div>
