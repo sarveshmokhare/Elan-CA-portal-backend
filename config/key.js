@@ -1,8 +1,7 @@
 module.exports = {
   google: {
-    clientID:
-      "1041908936463-jlnks41bot33uts501e4v7vc0s09nh6a.apps.googleusercontent.com",
-    Client_secret: "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",
+    clientID: "473008204666-ds2rbdfeggnmsjgd7nnijq26dhhq1k5j.apps.googleusercontent.com",
+    Client_secret: "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",
   },
   mongo: {
     code: "mongodb://localhost:27017/elanCAPortalDB",
