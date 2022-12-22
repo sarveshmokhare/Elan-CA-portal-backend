@@ -25,7 +25,7 @@ passport.use(
         } else {
           var num = await User.countDocuments();
           new User({
-            username: profile.displayName,
+            googleName: profile.displayName,
             googleID: profile.id,
             thumbnail: profile._json.picture,
             campambid: num + 1001,
@@ -33,12 +33,12 @@ passport.use(
           })
           .save()
           .then((user) => {
-              console.log(profile);
+              // console.log("in passport-setup page, logging profile: ", profile);
               done(null, user);
-              console.log(user);
+              console.log("in passport-setup page, logging user: ", user);
             })
-            .catch((error) => {
-              console.log(err);
+            .catch((err) => {
+              console.log("Error in passport-setup file: ", err);
             });
         }
       });

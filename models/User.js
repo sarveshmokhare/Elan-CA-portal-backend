@@ -1,11 +1,11 @@
 const mongoose = require("mongoose");
 const UserSchema = new mongoose.Schema({
-  yourname: { type: String },
-  username2: { type: String, unique: true },
-  username: { type: String, required: true },
+  fullname: { type: String },
+  username: { type: String },
+  googleName: { type: String },
   collegename: { type: String, unique: false },
   thumbnail: { type: String },
-  phno: { type: Number, unique: true },
+  phno: { type: Number },
   campambid: { type: Number, default: 0 },
   googleID: { type: Number },
   email: { type: String },

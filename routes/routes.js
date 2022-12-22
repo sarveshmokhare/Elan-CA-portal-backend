@@ -29,13 +29,13 @@ route.get("/profile", (req, res) => {
 });
 
 route.post("/profile", async (req, res) => {
-  const { yourname, username2, collegename, phone } = req.body;
-  console.log(yourname);
+  const { fullname, username, collegename, phone } = req.body;
+  console.log(fullname);
   var myquery = { googleID: req.user.googleID };
   var newvalues = {
-    $set: { yourname: yourname, username2: username2, collegename: collegename, phno: phone },
+    $set: { fullname: fullname, username: username, collegename: collegename, phno: phone },
   };
-  const username_check = await User.find({ $and: [{ username2: username2 }, { googleID: { $ne: req.user.googleID } }] })
+  const username_check = await User.find({ $and: [{ username: username }, { googleID: { $ne: req.user.googleID } }] })
   if (username_check.length == 1) alert("username already taken")
 
   const phno_check = await User.find({ $and: [{ phno: phone }, { googleID: { $ne: req.user.googleID } }] })
@@ -54,7 +54,7 @@ route.get("/profile/user", authCheck, (req, res) => {
     let userData = req.user;
     const totalPoints = userData.task0[1] + userData.task1[1] + userData.task2[1] + userData.task3[1] + userData.task4[1] + userData.task5[1] + userData.task6[1] + userData.task7[1] + userData.task8[1] + userData.task9[1];
 
-    console.log("req.user: ", req.user);
+    console.log("in routes.js page, logging req.user: ", req.user);
     User.findOneAndUpdate({ googleID: req.user.googleID }, { points: totalPoints }, err => {
       if (!err) res.render("user", { user: req.user });
 

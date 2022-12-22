@@ -4,9 +4,10 @@
       <div class="px-auto d-flex">
         <% if (user.thumbnail) { %>
           <img class="rounded-circle mx-auto" src="<%= user.thumbnail%>" alt="profile-pic"
-        <% } %>
-        <% if (!user.thumbnail) { %>
-          <img class="rounded-circle mx-auto" src="https://www.pngitem.com/pimgs/m/294-2947257_interface-icons-user-avatar-profile-user-avatar-png.png" alt="profile-pic2"
+        <% } else { %>
+            <img class="rounded-circle mx-auto"
+              src="https://www.pngitem.com/pimgs/m/294-2947257_interface-icons-user-avatar-profile-user-avatar-png.png"
+              alt="profile-pic2" 
         <% } %>
       </div>
     </div>
@@ -14,19 +15,23 @@
       <div>
         <p class="text-black mt-2"> <b>
             <strong style="font-weight: 900;font-family: Lora;font-size:1.7rem;">
-              <%=user.username%>
+              <% if (user.fullname) { %>
+                <%=user.fullname%>
+              <%} else { %>
+                <%=user.googleName%>
+              <% } %>
             </strong>
           </b> </p>
         <hr>
         <p style=" margin-top: -5px;font-size: 1.4rem;" class="text-black abtext">CA - <%=user.campambid%>
         </p>
-        <p style="margin-top: -15px;font-size: 1.4rem;" class="text-black abtext">Username - <%=user.username2%>
+        <p style="margin-top: -15px;font-size: 1.4rem;" class="text-black abtext">Username - <%=user.username%>
         </p>
         <p style=" margin-top: -15px;font-size: 1.4rem;" class="text-black abtext">College Name - <%=user.collegename%>
         </p>
         <p style="margin-top: -15px;font-size: 1.4rem;" class="text-black abtext">Phone Number - <%=user.phno%>
         </p>
-        
+
         <p style="margin-top: -15px;font-size: 1.4rem;" class="text-black abtext">Points - <%=user.points%>
         </p>
         <a href="/profile"><button class="btn btn-danger"><i style="color: white;" class="fas fa-edit mr-3"></i><span
