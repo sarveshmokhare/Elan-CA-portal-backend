@@ -28,18 +28,20 @@ passport.use(
           var num = await User.countDocuments();
 
 
-          var find=await User.findOne({ email: profile._json.email })
-          if(find){
-          var update=await User.updateOne({email:profile._json.email},
-            {$set: {
-            googleName: profile.displayName,
-            googleID: profile.id,
-            thumbnail: profile._json.picture,
-            campambid: num + 1001,
-            email: profile._json.email,
-          }}
+          var find = await User.findOne({ email: profile._json.email })
+          if (find) {
+            var update = await User.updateOne({ email: profile._json.email },
+              {
+                $set: {
+                  googleName: profile.displayName,
+                  googleID: profile.id,
+                  thumbnail: profile._json.picture,
+                  campambid: num + 1001,
+                  email: profile._json.email,
+                }
+              }
             )
-          
+
             User.findOne({ email: profile._json.email })
 
               .then((user) => {
@@ -50,33 +52,33 @@ passport.use(
               .catch((err) => {
                 console.log("Error in passport-setup file: ", err);
               });
-          
+
 
 
           }
-            else{
+          else {
 
-          new User({
-            googleName: profile.displayName,
-            googleID: profile.id,
-            thumbnail: profile._json.picture,
-            campambid: num + 1001,
-            email: profile._json.email,
-          })
-          .save()
-            .then((user) => {
-              console.log("in passport-setup page, logging profile: ", profile);
-              done(null, user);
-              console.log("in passport-setup page, logging user: ", user);
+            new User({
+              googleName: profile.displayName,
+              googleID: profile.id,
+              thumbnail: profile._json.picture,
+              campambid: num + 1001,
+              email: profile._json.email,
             })
-            .catch((err) => {
-              console.log("Error in passport-setup file: ", err);
-            });
-            }
+              .save()
+              .then((user) => {
+                console.log("in passport-setup page, logging profile: ", profile);
+                done(null, user);
+                console.log("in passport-setup page, logging user: ", user);
+              })
+              .catch((err) => {
+                console.log("Error in passport-setup file: ", err);
+              });
+          }
 
-            // User.findOne({email:profile._json.email})
-            
-          
+          // User.findOne({email:profile._json.email})
+
+
         }
       });
     }
