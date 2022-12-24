@@ -16,7 +16,6 @@
               <tr class="bg-dark text-white">
                 <th scope="col" class="font-weight-bold">Index</th>
                 <th scope="col" class="font-weight-bold">Name</th>
-                <th scope="col" class="font-weight-bold">College</th>
                 <th scope="col" class="font-weight-bold">Campus Ambassdor ID</th>
                 <th scope="col" class="font-weight-bold">Points</th>
                 <th scope="col" class="font-weight-bold">User Group</th>
@@ -32,35 +31,30 @@
 
                     <% if (user.username===king.username){ rank=count;%>
                       <td>
-                        <%= king.username %>
+                        <%= king.fullname %>
                       </td>
                       <% }else{%>
                         <td>
-                          <%= user.username %>
+                          <%= user.fullname %>
                         </td>
                         <%}%>
 
-                          <td>
-                            <%=user.collegename %>
-                          </td>
-                          <td>CA - <%= user.campambid %>
+                          <td> <%= user.username %>
                           </td>
                           <td>
                             <%=user.points %>
                           </td>
                           <td>
                             <%if(count<= 10){ %>
-                              King
+                              Diamond
                               <% }else if(count>10 && count <= 25){ %>
-                                  Queen
+                                  Platinum
                                   <% }else if(count>25 && count<= 50){%>
-                                    Rook
+                                    Gold
                                     <% }else if(count>50 && count<= 100){%>
-                                      Knight
-                                      <% }else if(count>100 && count<= 200){%>
-                                        Bishop
+                                      Sapphire
                                         <% }else {%>
-                                          Pawn
+                                          Jade
                                     <%}%>
                           </td>
                   </tr>
