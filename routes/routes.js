@@ -48,7 +48,7 @@ route.post("/profile", async (req, res) => {
   });
 });
 
-route.get("/profile/user", authCheck, (req, res) => {
+route.get("/profile/user", authCheck, async(req, res) => {
   if (req.user.collegename) {
 
     let userData = req.user;
@@ -62,7 +62,9 @@ route.get("/profile/user", authCheck, (req, res) => {
     });
 
   } else {
-    res.redirect("/profile");
+    await User.findOneAndRemove({email:req.user.email})
+    res.send("sorry, registration over")
+    // res.redirect("/profile");
   }
 });
 count = 0;
