@@ -141,12 +141,11 @@
 </head>
 
 <body>
-  <div class="px-3 py-1 text-white" style="background: rgb(49, 151, 149)">
-    <div class="container">
-      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+
+      <!-- <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start bg-info bg-gradient" style="height:2rem">
         <a href="https://elan.org.in/" target="_blank"
-          class="d-flex align-items-center my-1 my-lg-0 me-lg-auto text-white text-decoration-none">
-          <img src="/assets/logo.png" height="60" width="200" />
+          class="d-flex my-1 me-lg-auto ml-lg-2" style="height:100%">
+          <img src="/assets/logo.png" height="100%" width="200" />
         </a>
         <ul class="nav col-12 col-lg-auto my-1 justify-content-center my-md-0 text-small">
           <li>
@@ -213,9 +212,103 @@
                 class="fab fa-google me-2 g-icon"></i>Login with Google</a>
           </button>
           <%}%>
-      </div>
-    </div>
+      </div> -->
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary justify-content-between text-center " style="z-index: 5;">
+  <a href="https://elan.org.in/" target="_blank" class="d-flex my-1 me-lg-auto ml-lg-2" style="height:100%">
+    <img src="/assets/logo.png" height="50" />
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+    <ul class="navbar-nav ">
+      <li class="nav-item text-center ">
+        <a href="/" class="nav-link text-white">
+          <i class="fas fa-house-user bi d-block"></i>
+          <div style="height: min-content;">Home</div>
+        </a>
+      </li>
+      <% if (user){ %>
+        <li class="nav-item">
+          <a href="/profile/leaderboard" class="text-white nav-link">
+            <i class="fas fa-trophy bi d-block"></i>
+            Leaderboard
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/profile/tasks" class="text-white nav-link">
+            <i class="fas fa-tasks bi d-block"></i>
+            Tasks
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/profile/user" class="text-white nav-link">
+            <i class="fas fa-address-card bi d-block"></i>
+            Profile
+          </a>
+        </li>
+        <li class="nav-item mx-3">
+          <a class="text-white nav-link">
+            <span class="changedesc"><i class="fas fa-user bi d-block"></i>Hello
+              <% if (user.fullname) { %>
+                <%=user.fullname%>
+                  <%} else { %>
+                    <%=user.googleName%>
+                      <% } %>
+            </span>
+          </a>
+        </li>
+        <li class="nav-item d-flex flex-column justify-content-center">
+          <a class="text-white nav-link" href="/logout" style="
+                        text-decoration: none;
+                        color: white;
+                        font-family: 'Roboto';
+                        font-weight: 900;
+                      ">
+            <button class="btn btn-warning text-white me-2">
+              <i class="fas fa-sign-out-alt me-2 g-icon-x"></i><span style="
+                            text-decoration: none;
+                            color: white;
+                            font-family: 'Roboto';
+                            font-weight: 900;
+                          ">Logout</span>
+            </button>
+          </a>
+        </li>
+      
+        <%}%>
+
+        <% if (!user){ %>
+          <li class="nav-item mx-3"><span class="changedesc text-white nav-link"><i class="fas fa-user bi d-block"></i>Hello Guest</span>
+          </li>
+          <li class="nav-item text-center d-flex justify-content-center flex-column text-center mx-auto">
+            <button class="btn btn-warning text-white nav-link px-2" style="width:fit-content;">
+              <a href="/google" style="text-decoration: none; color: white; font-family: 'Roboto'"><i
+                  class="fab fa-google me-2 g-icon"></i>Login with Google</a>
+            </button>
+          </li>
+          <%}%>
+    </ul>
   </div>
+</nav>
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 
 </html>
