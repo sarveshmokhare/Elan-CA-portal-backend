@@ -15,14 +15,15 @@
         <br>
         <div class="row">
           <% count=0 %>
-            <% if(tasks.length===0) {%>
+          <% task_dummy=[1,1]%>
+            <% if(task_dummy.length===0) {%>
               <h2>Tasks will be announced soon :)</h2>
 
               <% }else{%>
-                <% tasks.forEach(function(task){%>
+                <% task_dummy.forEach(function(task){%>
                   <div class="col-lg-6">
                     <div class="card d-flex-row mx-0 my-3">
-                      <div class="card-body m-3">
+                      <!-- <div class="card-body m-3">
                         <h5 class="card-title"><strong>
                             <h3 style="font-weight: 900;">
                               <%= task.taskname%>
@@ -31,38 +32,101 @@
                         <p class="card-text" style="font-weight:400">
                           <%= task.taskdescription%>
                         </p>
-                      </div>
+                      </div> -->
                       <% switch (count){ case 0 : %>
+                        <div class="card-body m-3">
+                          <h5 class="card-title"><strong>
+                              <h3 style="font-weight: 900;">
+                                <!-- <%= task.taskname%> -->
+                                Task 1
+                              </h3>
+                            </strong></h5>
+                          <div class="card-text" style="font-weight:400">
+                            <!-- <%= task.taskdescription%> -->
+                            Here is the first task for all of you. You need to follow all of our Social Media Handles, i.e., Instagram, Facebook,
+                            YouTube, LinkedIn, and Twitter. You are required to take screenshots as proof. We will float a google form where you can
+                            submit those screenshots. We'll also ask you for your social media account usernames to verify.
+                            We will give scores on the basis of the proofs submitted. <br> By the end of the CA program, CAs having the Highest score
+                            will receive goods and merch from Elan & ηVision. <br> 
+                            <ul>
+                              The following are the official social media handles of Elan & ηVision.
+                              <li><a href="https://instagram.com/elan_nvision.iith?igshid=YmMyMTA2M2Y=">Instagram</a></li>
+                              <li><a href="https://www.facebook.com/elannvision.iithyderabad/">Facebook</a></li>
+                              <li><a href="https://mobile.twitter.com/elan_nvision">Twitter</a></li>
+                              <li><a href="https://youtube.com/user/ElanIITHyderabad">Youtube</a></li>
+                              <li><a href="https://www.linkedin.com/company/elan-nvision-iith/">Linkedin</a></li>
+                            </ul>
+                            Following our account will be given points in such
+                            <br>
+                              Instagram and LinkedIn - 10
+                            points each <br>
+                              Facebook, twitter and YouTube - 5 points each
+                          </div>
+                        </div>
                         <ul class="list-group list-group-flush">
                           <div class="d-flex">
                             <li class="list-group-item m-3 d-flex align-center mx-auto" style="border: none;">
-                              <%if (user.task0[0]){%><span class="btn btn-success">Completed<%}else{%><span
-                                      class="btn btn-danger">Not
+                              <%if (user.task0[0]){%><span class="btn btn-success" onmouseover="this.style.cursor='default'">Completed<%}else{%><span
+                                      class="btn btn-danger "onmouseover="this.style.cursor='default'">Not
                                       Completed</span>
                                     <%}%>
                             </li>
                           </div>
-                          <li class="btn btn-warning p-2"><strong>Points : <%if (user.task0[1]){%>
+                          <li class="btn btn-warning p-2"onmouseover="this.style.cursor='default'"><strong>Points : <%if (user.task0[1]){%>
                                 <%= user.task0[1]%>
                                   <%}else{%>0
-                                    <%}%>/ <%=task.taskpoints%></strong>
+                                    <%}%>/ 35</strong>
                           </li>
                         </ul>
                         <% ;break; %>
                           <% case 1 : %>
+                          <div class="card-body m-3">
+                            <h5 class="card-title"><strong>
+                                <h3 style="font-weight: 900;">
+                                  <!-- <%= task.taskname%> -->
+                                  Task 2
+                                </h3>
+                              </strong></h5>
+                            <p class="card-text" style="font-weight:400">
+                              <!-- <%= task.taskdescription%> -->
+                              Hello guys ! So here is the second task for you.
+                              We have our online Litfest going on. We have all sorts of different competitions. (We have attached the poster of list
+                              of events). <br>
+                              
+                              All the CAs need to share it in your social media handles with the registration and website link. You should bring
+                              registrations for the litfest by contacting your peers and friends from your college. <br>
+                              
+                              For sharing in social media handles, the following are the points: <br>
+                              Instagram, Facebook -10 points each. (Make sure you add the links)
+                              <br>
+                              Visit our website for more information: <a href="https://elan.org.in/Litfest.html">Elan Litfest</a>
+                              <br><br>
+                              <b>Registration Link: </b><a href="https://docs.google.com/forms/d/e/1FAIpQLSffRktv0EtbNZ8T-mFwMOBKxXzdKNikLrGWurfU0nqo99rg-g/viewform">https://docs.google.com/forms/d/e/1FAIpQLSffRktv0EtbNZ8T-mFwMOBKxXzdKNikLrGWurfU0nqo99rg-g/viewform</a>
+                              <br><br>
+
+                              For each registration you bring, 50 points will be awarded. <br>
+                              
+                              Similar to the first task, you have to submit the screenshots as proof and the same form will be contain a section where
+                              you need to fill in the details of the participants who registered in Litfest through you. <br>
+                              
+                              This task can change the leaderboard, so be enthusiastic to rise up the leaderboard.
+                              <br><br>
+                              <b>Deadline of this task : 27th December 2400HRS</b>
+                            </p>
+                          </div>
                             <ul class="list-group list-group-flush">
                               <div class="d-flex">
                                 <li class="list-group-item m-3 d-flex align-center mx-auto" style="border: none;">
-                                  <%if (user.task1[0]){%><span class="btn btn-success">Completed<%}else{%><span
-                                          class="btn btn-danger">Not
+                                  <%if (user.task1[0]){%><span class="btn btn-success"onmouseover="this.style.cursor='default'">Completed<%}else{%><span
+                                          class="btn btn-danger"onmouseover="this.style.cursor='default'">Not
                                           Completed</span>
                                         <%}%>
                                 </li>
                               </div>
-                              <li class="btn btn-warning p-2"><strong>Points : <%if (user.task1[1]){%>
+                              <li class="btn btn-warning p-2"onmouseover="this.style.cursor='default'"><strong>Points : <%if (user.task1[1]){%>
                                     <%= user.task1[1]%>
                                       <%}else{%>0
-                                        <%}%>/ <%=task.taskpoints%></strong>
+                                        <%}%> <%=task.taskpoints%></strong>
                               </li>
                             </ul>
                             <% ;break; %>
