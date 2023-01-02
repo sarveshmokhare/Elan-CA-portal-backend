@@ -15,7 +15,7 @@
         <br>
         <div class="row">
           <% count=0 %>
-          <% task_dummy=[1,1]%>
+          <% task_dummy=[1,1,1]%>
             <% if(task_dummy.length===0) {%>
               <h2>Tasks will be announced soon :)</h2>
 
@@ -131,6 +131,35 @@
                             </ul>
                             <% ;break; %>
                               <% case 2 : %>
+                              <div class="card-body m-3">
+                                <h5 class="card-title"><strong>
+                                    <h3 style="font-weight: 900;">
+                                      <!-- <%= task.taskname%> -->
+                                      Task 3
+                                    </h3>
+                                  </strong></h5>
+                                <div class="card-text" style="font-weight:400">
+                                  <!-- <%= task.taskdescription%> -->
+
+                                  Here is your 3rd task.
+                                  Given below is the information about the upcoming workshops, you have to share it in your social media handles. <br> <br>
+                       Points will be given in such manner <br>
+                                    
+                                  Instagram story - 10 points <br>
+                                  Twitter - 5 points <br>
+                                  WhatsApp Status - 10 points <br>
+                                  Facebook - 5 points <br>
+                                  LinkedIn - 5 points
+                                  <br> <br>
+                                  In addition to it, the following link directs to the workshop post on our Instagram handle. Do like, share, comment and
+                                  save the post and upload all the necessary proofs(screenshots). A total of 15 points will be awarded for the same.
+                                  <br>
+                                  <br> Link: <a href="https://www.instagram.com/p/CmeQHkxS55i/?igshid=OGQ2MjdiOTE=">https://www.instagram.com/p/CmeQHkxS55i/?igshid=OGQ2MjdiOTE=</a>
+                                  <br> <br>
+                                  
+                                  <strong>Deadline of this task is 2nd January 11:59 PM</strong>
+                                </div>
+                              </div>
                                 <ul class="list-group list-group-flush">
                                   <div class="d-flex">
                                     <li class="list-group-item m-3 d-flex align-center mx-auto" style="border: none;">
@@ -143,7 +172,7 @@
                                   <li class="btn btn-warning p-2"><strong>Points : <%if (user.task2[1]){%>
                                         <%= user.task2[1]%>
                                           <%}else{%>0
-                                            <%}%>/ <%= task.taskpoints%></strong>
+                                            <%}%>/ 50</strong>
                                   </li>
                                 </ul>
                                 <% ;break; %>
